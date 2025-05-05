@@ -174,15 +174,18 @@ footer {
   }
 
   #menu.open {
-    transform: translateX(-100%); /* Desliza para dentro */
+    right: 0; /* encosta o menu na lateral direita */
   }
 }
 
+#menu {
+  transition: right 0.3s ease;
+}
+
+
 /* Animação de transição para o ícone de hambúrguer */
 #menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg);
-  position: absolute;
-  top: 9px;
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 #menu-toggle.open span:nth-child(2) {
@@ -190,10 +193,9 @@ footer {
 }
 
 #menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 9px;
+  transform: rotate(-45deg) translate(5px, -5px);
 }
+
 
 #btn-topo {
   position: fixed;
@@ -482,32 +484,18 @@ footer {
     left: 100%;
   }
 }
-/* Mostra o botão só no mobile */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: white;
+
+/* Estilo básico para o menu hamburguer */
+.menu-hamburguer {
+  color: #fff; /* branco para contrastar com o fundo preto */
+  font-size: 30px; /* ajusta o tamanho do ícone */
+  display: none; /* esconde o ícone por padrão */
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
+@media screen and (max-width: 768px) {
+  /* Exibe o menu hamburguer para dispositivos móveis */
+  .menu-hamburguer {
     display: block;
   }
-
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #111;
-    padding: 1rem;
-    border-radius: 8px;
-    z-index: 999;
-  }
-
-  .nav-list.active {
-    display: flex;
-  }
 }
+
