@@ -175,9 +175,45 @@ footer {
     text-align: center;
   }
 
-  #menu.open {
-    transform: translateX(-190%); /* Desliza para dentro */
+  /* Menu padrão - oculto até que a classe 'open' seja aplicada */
+#menu {
+  display: none; /* Esconde o menu por padrão */
+  position: fixed; /* Fixa o menu na tela */
+  top: 0;
+  left: 200px;
+  width: 100%;
+  height: 100%; /* Ocupa a tela inteira */
+ 
+  /* Fundo escuro */
+  overflow-y: auto; /* Permite rolar se o conteúdo for maior que a tela */
+  transition: transform 0.3s ease; /* Transição suave */
+  transform: translateX(-100%); /* Inicialmente, o menu está fora da tela */
+}
+
+/* Menu aberto - quando a classe 'open' é adicionada */
+#menu.open {
+  display: block; /* Exibe o menu */
+ 
+  transform: translateX(0); /* Desliza o menu para dentro */
+}
+
+/* Para dispositivos móveis (ou seja, com a largura da tela menor que 768px) */
+@media (max-width: 768px) {
+  #menu {
+    
+    display: none; /* Esconde o menu por padrão */
   }
+
+  #menu.open {
+    
+    display: block; /* Exibe o menu */
+  }
+
+  .menu-toggle {
+    display: flex;/* Exibe o botão de hambúrguer para dispositivos móveis */
+  }
+}
+
 }
 
 
