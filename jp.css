@@ -117,10 +117,11 @@ footer {
 }
 
 .menu-toggle span {
-  background-color: #ffa94d;
+  background-color: #ff6600;
   height: 4px;
-  width: 100%;
+  width: 150%;
   border-radius: 5px;
+
 }
 
 #menu {
@@ -132,7 +133,7 @@ footer {
 }
 
 #menu li {
-  position: relative;
+  padding: 10px 20px;
 }
 
 #menu li a {
@@ -141,6 +142,7 @@ footer {
   font-weight: bold;
   transition: all 0.3s ease; /* Suaviza animação */
 }
+
 
 /* Efeito de brilho no menu */
 #menu li a:hover {
@@ -174,26 +176,31 @@ footer {
   }
 
   #menu.open {
-    right: 0; /* encosta o menu na lateral direita */
+    transform: translateX(-190%); /* Desliza para dentro */
   }
-}
-
-#menu {
-  transition: right 0.3s ease;
 }
 
 
 /* Animação de transição para o ícone de hambúrguer */
 #menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg);
+  top: 9px;
+  
 }
+
 
 #menu-toggle.open span:nth-child(2) {
   opacity: 0;
+ 
+  
+
 }
 
 #menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg);
+  top: 9px;
+  
+  
 }
 
 
@@ -482,20 +489,6 @@ footer {
   }
   100% {
     left: 100%;
-  }
-}
-
-/* Estilo básico para o menu hamburguer */
-.menu-hamburguer {
-  color: #fff; /* branco para contrastar com o fundo preto */
-  font-size: 30px; /* ajusta o tamanho do ícone */
-  display: none; /* esconde o ícone por padrão */
-}
-
-@media screen and (max-width: 768px) {
-  /* Exibe o menu hamburguer para dispositivos móveis */
-  .menu-hamburguer {
-    display: block;
   }
 }
 

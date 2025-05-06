@@ -18,10 +18,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Menu Responsivo (hambúrguer)
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
+
 menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('open');
-  menuToggle.classList.toggle('open');
+  menu.classList.toggle('open');        // abre/fecha o menu
+  menuToggle.classList.toggle('open');  // ativa o estilo X
 });
+
 
 // Mostrar botão "Voltar ao topo" quando rolar a página
 window.addEventListener('scroll', () => {
@@ -127,11 +129,4 @@ botoesVerMais.forEach((botao, index) => {
     fotos.style.display = fotos.style.display === 'none' ? 'flex' : 'none';
   });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menu-toggle');
-  const navList = document.querySelector('.nav-list');
 
-  menuToggle.addEventListener('click', () => {
-    navList.classList.toggle('active');
-  });
-});
